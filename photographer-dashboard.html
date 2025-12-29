@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photographer Dashboard - Manage Your Bookings">
+    <title>Photographer Dashboard - PhotoStudio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+    
+    <!-- Dashboard Wrapper -->
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="sidebar-logo-text">Photo<span>Studio</span></div>
+            </div>
+            
+            <!-- Menu -->
+            <nav class="sidebar-menu">
+                <a href="photographer-dashboard.html" class="sidebar-menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span class="sidebar-menu-text">Dashboard</span>
+                </a>
+                <a href="#bookings" class="sidebar-menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="sidebar-menu-text">My Bookings</span>
+                </a>
+                <a href="#schedule" class="sidebar-menu-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="sidebar-menu-text">Schedule</span>
+                </a>
+                <a href="#gallery" class="sidebar-menu-item">
+                    <i class="fas fa-images"></i>
+                    <span class="sidebar-menu-text">Upload Gallery</span>
+                </a>
+                <a href="#earnings" class="sidebar-menu-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span class="sidebar-menu-text">Earnings</span>
+                </a>
+                <a href="#profile" class="sidebar-menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="sidebar-menu-text">Profile</span>
+                </a>
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);"></div>
+                <a href="index.html" class="sidebar-menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="sidebar-menu-text">Back to Home</span>
+                </a>
+                <button class="sidebar-menu-item logout-btn" style="width: 100%; text-align: left;">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="sidebar-menu-text">Logout</span>
+                </button>
+            </nav>
+            
+            <!-- Footer -->
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="sidebar-user-avatar">SJ</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Sarah Johnson</div>
+                        <div class="sidebar-user-role">Photographer</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="dashboard-title">Photographer Dashboard</h1>
+                </div>
+                <div class="dashboard-header-right">
+                    <button class="header-icon-btn" data-tooltip="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </button>
+                    <button class="header-icon-btn theme-toggle" data-tooltip="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="header-icon-btn" data-tooltip="Profile">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="dashboard-content">
+                <!-- Earnings Summary Card -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Total Earnings</div>
+                        <div class="stat-card-value">$45,200</div>
+                        <div class="stat-card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>This month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Upcoming Bookings</div>
+                        <div class="stat-card-value">12</div>
+                        <div class="stat-card-change positive">
+                            <i class="fas fa-calendar"></i>
+                            <span>Next 30 days</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Completed</div>
+                        <div class="stat-card-value">45</div>
+                        <div class="stat-card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>This month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Pending Requests</div>
+                        <div class="stat-card-value">3</div>
+                        <div class="stat-card-change">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Requires action</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Two Column Layout -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <!-- Upcoming Bookings -->
+                    <div class="dashboard-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-calendar-check"></i>
+                            Upcoming Bookings
+                        </h2>
+                        
+                        <div class="booking-card">
+                            <div class="booking-card-header">
+                                <h3 class="booking-card-title">Wedding Package</h3>
+                                <span class="status-badge confirmed">Confirmed</span>
+                            </div>
+                            <div class="booking-card-info">
+                                <div class="booking-info-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>John & Sarah</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Mar 25, 2024</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>9:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Grand Hotel</span>
+                                </div>
+                            </div>
+                            <div class="booking-card-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-card">
+                            <div class="booking-card-header">
+                                <h3 class="booking-card-title">Portrait Session</h3>
+                                <span class="status-badge confirmed">Confirmed</span>
+                            </div>
+                            <div class="booking-card-info">
+                                <div class="booking-info-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Emma Wilson</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Mar 28, 2024</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>2:00 PM - 4:00 PM</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Studio Location</span>
+                                </div>
+                            </div>
+                            <div class="booking-card-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-card">
+                            <div class="booking-card-header">
+                                <h3 class="booking-card-title">Family Session</h3>
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                            <div class="booking-card-info">
+                                <div class="booking-info-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>Lisa Anderson</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Apr 5, 2024</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>10:00 AM - 12:00 PM</span>
+                                </div>
+                                <div class="booking-info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Central Park</span>
+                                </div>
+                            </div>
+                            <div class="booking-card-actions">
+                                <button class="action-btn accept">
+                                    <i class="fas fa-check"></i>
+                                    Accept
+                                </button>
+                                <button class="action-btn reject">
+                                    <i class="fas fa-times"></i>
+                                    Reject
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calendar / Schedule -->
+                    <div class="dashboard-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            Schedule - March 2024
+                        </h2>
+                        
+                        <div class="calendar-container">
+                            <div class="calendar-day">
+                                <div class="calendar-day-name">Sun</div>
+                                <div class="calendar-day-number">1</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-name">Mon</div>
+                                <div class="calendar-day-number">2</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-name">Tue</div>
+                                <div class="calendar-day-number">3</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-name">Wed</div>
+                                <div class="calendar-day-number">4</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-name">Thu</div>
+                                <div class="calendar-day-number">5</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-name">Fri</div>
+                                <div class="calendar-day-number">6</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-name">Sat</div>
+                                <div class="calendar-day-number">7</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">8</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">9</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">10</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">11</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">12</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">13</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">14</div>
+                            </div>
+                            <div class="calendar-day has-booking">
+                                <div class="calendar-day-number">15</div>
+                                <div style="font-size: 0.6rem; color: var(--molten-copper);">Event</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">16</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">17</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">18</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">19</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">20</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">21</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">22</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">23</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">24</div>
+                            </div>
+                            <div class="calendar-day has-booking">
+                                <div class="calendar-day-number">25</div>
+                                <div style="font-size: 0.6rem; color: var(--molten-copper);">Wedding</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">26</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">27</div>
+                            </div>
+                            <div class="calendar-day has-booking">
+                                <div class="calendar-day-number">28</div>
+                                <div style="font-size: 0.6rem; color: var(--molten-copper);">Portrait</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">29</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">30</div>
+                            </div>
+                            <div class="calendar-day">
+                                <div class="calendar-day-number">31</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upload Gallery Section -->
+                <div class="dashboard-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-images"></i>
+                        Upload Gallery
+                    </h2>
+                    
+                    <div class="upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <div class="upload-area-text">Drag & drop photos here or click to browse</div>
+                        <div class="upload-area-hint">Supports JPG, PNG, HEIC (Max 10MB per file)</div>
+                        <button class="action-btn" style="margin-top: 20px;">
+                            <i class="fas fa-folder-open"></i>
+                            Select Files
+                        </button>
+                    </div>
+                    
+                    <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px;">
+                        <div style="aspect-ratio: 1; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--text-light);">
+                            <i class="fas fa-image" style="font-size: 2rem;"></i>
+                        </div>
+                        <div style="aspect-ratio: 1; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--text-light);">
+                            <i class="fas fa-image" style="font-size: 2rem;"></i>
+                        </div>
+                        <div style="aspect-ratio: 1; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--text-light);">
+                            <i class="fas fa-image" style="font-size: 2rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
+

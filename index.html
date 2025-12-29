@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Photography Services - Book your photo session today. Wedding, Portrait, Event & Commercial Photography">
+    <title>Photography Booking - Capture Your Moments</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Neo-Lux Industrial Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Neue Montreal alternative: Using Inter as base, will enhance with CSS -->
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Opening Animation -->
+    <div class="opening-animation" id="opening-animation">
+        <div class="copper-glint"></div>
+        <div class="logo-reveal">
+            <div class="logo-text">Photo<span>Studio</span></div>
+        </div>
+        <button class="skip-animation" id="skip-animation" aria-label="Skip animation">
+            Skip <i class="fas fa-forward"></i>
+        </button>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="#home">Photo<span>Studio</span></a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#packages" class="nav-link">Packages</a></li>
+                    <li><a href="#portfolio" class="nav-link">Gallery</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-menu-dashboard">
+                        <a href="customer-dashboard.html" class="btn btn-primary nav-dashboard-btn-mobile">
+                            <i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu-theme-toggle">
+                        <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" aria-label="Toggle Dark Mode">
+                            <i class="fas fa-moon"></i> <span>Toggle Theme</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="login.html" class="btn btn-secondary nav-auth-btn" style="padding: 5px 12px; font-size: 0.75rem;">
+                        <i class="fas fa-sign-in-alt"></i> <span class="nav-dashboard-text">Login</span>
+                    </a>
+                    <a href="register.html" class="btn btn-primary nav-auth-btn" style="padding: 5px 12px; font-size: 0.75rem;">
+                        <i class="fas fa-user-plus"></i> <span class="nav-dashboard-text">Register</span>
+                    </a>
+                    <a href="customer-dashboard.html" class="btn btn-primary nav-dashboard-btn" style="padding: 5px 12px; font-size: 0.75rem;">
+                        <i class="fas fa-tachometer-alt"></i> <span class="nav-dashboard-text">Dashboard</span>
+                    </a>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line-1">Capture Your</span><br>
+                        <span class="title-line-2 highlight">Perfect Moments</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Professional <span class="typing-text"></span>
+                    </h2>
+                    <p class="hero-description">
+                        Specializing in wedding photography, portraits, events, and commercial shoots. 
+                        Let's create timeless memories together!
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#booking" class="btn btn-primary">Book Session</a>
+                        <a href="#portfolio" class="btn btn-secondary">View Gallery</a>
+                    </div>
+                    <div class="social-links">
+                        <a class="linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.024-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.354V9h3.413v1.561h.047c.476-.901 1.637-1.852 3.37-1.852 3.604 0 4.27 2.372 4.27 5.455v6.287zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.451H3.558V9h3.556v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                            </svg>
+                        </a>
+                        <a class="github" href="#" aria-label="GitHub" target="_blank" rel="noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M12 .297a12 12 0 0 0-3.793 23.399c.6.111.82-.258.82-.577 0-.285-.011-1.04-.017-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.492.997.108-.775.419-1.304.762-1.604-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.004 0c2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.806 5.624-5.479 5.921.43.371.814 1.102.814 2.222 0 1.604-.015 2.896-.015 3.293 0 .321.217.694.825.576A12 12 0 0 0 12 .297z"/>
+                            </svg>
+                        </a>
+                        <a class="x" href="#" aria-label="X (Twitter)" target="_blank" rel="noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M18.244 2H21l-6.478 7.396L22.5 22h-6.89l-4.5-6.036L5 22H2.244l6.89-7.87L1.5 2h6.89l4.096 5.488L18.244 2zm-1.207 18h2.097L8.01 4H5.914l11.123 16z"/>
+                            </svg>
+                        </a>
+                        <a class="instagram" href="#" aria-label="Instagram" target="_blank" rel="noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 16.8 2.8 2.8 0 0 0 12 9.2zm5.8-2.7a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=600&h=600&fit=crop&auto=format" alt="Professional Photographer" class="profile-img" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x600/B87333/FFFFFF?text=Photographer'; this.style.display='block';">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Your trusted photographer</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://picsum.photos/600/500?random=2" alt="Professional Photographer" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNTAwIj48cmVjdCBmaWxsPSIjRjVGNUY1IiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjUwMCIvPjx0ZXh0IGZpbGw9IiNCODYzMzMiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9ImJvbGQiIHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5Qcm9mZXNzaW9uYWwgUGhvdG9ncmFwaGVyPC90ZXh0Pjwvc3ZnPg=='; this.style.display='block';">
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="200">0</h3>
+                            <p>Photo Sessions</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="150">0</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="8">0</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Professional Photographer</h3>
+                    <p>
+                        Hello! I'm a passionate photographer specializing in capturing life's most precious moments. 
+                        With over 8 years of experience in wedding photography, portraits, events, and commercial shoots, 
+                        I've had the privilege of documenting countless beautiful stories and creating timeless memories 
+                        for families and businesses.
+                    </p>
+                    <p>
+                        My approach combines artistic vision with technical expertise to deliver stunning photographs 
+                        that tell your unique story. Every session is tailored to reflect your personality and style.
+                    </p>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-camera"></i>
+                            <span><strong>Specialization:</strong> Wedding, Portrait, Event</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Phone:</strong> +1 234 567 8900</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong> hello@photostudio.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Location:</strong> New York, USA</span>
+                        </div>
+                    </div>
+
+                    <div class="certifications">
+                        <h4><i class="fas fa-award"></i> Certifications & Awards</h4><br>
+                        <ul>
+                            <li>Professional Photographers of America (PPA) Certified</li>
+                            <li>Wedding Photography Excellence Award 2023</li>
+                            <li>Portrait Photography Masterclass Certification</li>
+                            <li>Featured in Photography Magazine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="services section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Photography Packages</h2>
+                <p class="section-subtitle">Choose the perfect package for your needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Wedding Package</h3>
+                    <div class="package-price">$2,500</div>
+                    <p>
+                        Full day coverage (8 hours), engagement session, 
+                        online gallery, 300+ edited photos, USB with all images.
+                    </p>
+                    <a href="#booking" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Portrait Session</h3>
+                    <div class="package-price">$350</div>
+                    <p>
+                        2-hour session, 1 location, professional editing, 
+                        online gallery, 30+ edited photos, print release.
+                    </p>
+                    <a href="#booking" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Event Photography</h3>
+                    <div class="package-price">$800</div>
+                    <p>
+                        4-hour coverage, candid & posed shots, 
+                        online gallery, 150+ edited photos, same-day preview.
+                    </p>
+                    <a href="#booking" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Commercial Shoot</h3>
+                    <div class="package-price">$1,200</div>
+                    <p>
+                        Product photography, headshots, branding, 
+                        commercial editing, high-res files, usage rights.
+                    </p>
+                    <a href="#booking" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Family Session</h3>
+                    <div class="package-price">$450</div>
+                    <p>
+                        2-hour outdoor session, up to 6 people, 
+                        natural light, 40+ edited photos, online gallery.
+                    </p>
+                    <a href="#booking" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Graduation Package</h3>
+                    <div class="package-price">$300</div>
+                    <p>
+                        1.5-hour session, cap & gown photos, 
+                        casual shots, 25+ edited photos, digital delivery.
+                    </p>
+                    <a href="#booking" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking section" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Book Your Session</h2>
+                <p class="section-subtitle">Fill out the form below to reserve your date</p>
+            </div>
+
+            <div class="booking-content">
+                <div class="booking-info">
+                    <h3>Booking Information</h3>
+                    <p>Please fill out all required fields to book your photography session. We'll confirm your booking within 24 hours.</p>
+                    
+                    <div class="booking-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Flexible scheduling</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Quick confirmation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Secure payment</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free consultation</span>
+                        </div>
+                    </div>
+
+                    <div class="booking-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Note:</strong> A 50% deposit is required to secure your booking. The remaining balance is due on the day of the session.</p>
+                    </div>
+                </div>
+
+                <div class="booking-form-wrapper">
+                    <form class="booking-form" id="booking-form">
+                        <div class="form-group">
+                            <label for="booking-name">Full Name *</label>
+                            <input type="text" id="booking-name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-email">Email Address *</label>
+                            <input type="email" id="booking-email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-phone">Phone Number *</label>
+                            <input type="tel" id="booking-phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-package">Select Package *</label>
+                            <select id="booking-package" name="package" required>
+                                <option value="">Choose a package</option>
+                                <option value="wedding">Wedding Package - $2,500</option>
+                                <option value="portrait">Portrait Session - $350</option>
+                                <option value="event">Event Photography - $800</option>
+                                <option value="commercial">Commercial Shoot - $1,200</option>
+                                <option value="family">Family Session - $450</option>
+                                <option value="graduation">Graduation Package - $300</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-date">Preferred Date *</label>
+                                <input type="date" id="booking-date" name="date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="booking-time">Preferred Time *</label>
+                                <select id="booking-time" name="time" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-location">Location</label>
+                            <input type="text" id="booking-location" name="location" placeholder="Event location or studio">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-details">Additional Details</label>
+                            <textarea id="booking-details" name="message" rows="4" placeholder="Tell us about your event, special requirements, or any questions..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Submit Booking Request <i class="fas fa-calendar-check"></i>
+                        </button>
+                        <div class="form-message" id="booking-form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-subtitle">Explore our recent photography work</p>
+            </div>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wedding">Wedding</button>
+                <button class="filter-btn" data-filter="portrait">Portrait</button>
+                <button class="filter-btn" data-filter="event">Event</button>
+                <button class="filter-btn" data-filter="family">Family</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="wedding">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=900&fit=crop" alt="Wedding Photography - Beautiful Bride and Groom" onerror="this.src='https://via.placeholder.com/1200x900/1A1A1A/C0C0C0?text=Wedding+Photography'">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Wedding Ceremony</h3>
+                                <p>Wedding Photography</p>
+                                <div class="portfolio-links">
+                                    <button class="view-btn" data-project="1">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="portrait">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&h=900&fit=crop" alt="Portrait Photography - Professional Headshot" onerror="this.src='https://via.placeholder.com/1200x900/1A1A1A/C0C0C0?text=Portrait+Photography'">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Professional Portrait</h3>
+                                <p>Portrait Photography</p>
+                                <div class="portfolio-links">
+                                    <button class="view-btn" data-project="2">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="family">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&h=900&fit=crop" alt="Family Photography - Happy Family Portrait" onerror="this.src='https://via.placeholder.com/1200x900/1A1A1A/C0C0C0?text=Family+Photography'">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Family Session</h3>
+                                <p>Family Photography</p>
+                                <div class="portfolio-links">
+                                    <button class="view-btn" data-project="3">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="wedding">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&h=900&fit=crop" alt="Wedding Photography - Romantic Couple" onerror="this.src='https://via.placeholder.com/1200x900/1A1A1A/C0C0C0?text=Wedding+Reception'">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Wedding Reception</h3>
+                                <p>Wedding Photography</p>
+                                <div class="portfolio-links">
+                                    <button class="view-btn" data-project="4">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="event">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&h=900&fit=crop" alt="Event Photography - Corporate Event" onerror="this.src='https://via.placeholder.com/1200x900/1A1A1A/C0C0C0?text=Corporate+Event'">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Corporate Event</h3>
+                                <p>Event Photography</p>
+                                <div class="portfolio-links">
+                                    <button class="view-btn" data-project="5">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="portrait">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=1200&h=900&fit=crop" alt="Portrait Photography - Business Headshot" onerror="this.src='https://via.placeholder.com/1200x900/1A1A1A/C0C0C0?text=Business+Headshot'">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Business Headshot</h3>
+                                <p>Portrait Photography</p>
+                                <div class="portfolio-links">
+                                    <button class="view-btn" data-project="6">
+                                        <i class="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modal -->
+    <div class="modal" id="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                    <div class="modal-image">
+                    <img id="modal-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=900&fit=crop" alt="Project" onerror="this.src='https://via.placeholder.com/800x600/1A1A1A/C0C0C0?text=Image+Not+Available'">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div class="modal-meta">
+                        <span><i class="fas fa-calendar"></i> January 2024</span>
+                        <span><i class="fas fa-tag"></i> <span id="modal-category">Category</span></span>
+                    </div>
+                    <p id="modal-description">
+                        Detailed project description goes here. This includes the client's requirements,
+                        challenges faced, solutions implemented, and final results achieved.
+                    </p>
+                    <div class="modal-technologies">
+                        <h4>Technologies Used:</h4>
+                        <div class="tech-tags" id="modal-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <a href="#" class="btn btn-primary">View Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Photography Expertise</h2>
+                <p class="section-subtitle">My photography skills and equipment</p>
+            </div>
+
+            <div class="skills-content">
+                <div class="technical-skills">
+                    <h3><i class="fas fa-camera"></i> Photography Skills</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Wedding Photography</span>
+                            <span class="skill-percentage">98%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="98"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Portrait Photography</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Event Photography</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="92"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Commercial Photography</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Photo Editing</span>
+                            <span class="skill-percentage">96%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="96"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Lighting Techniques</span>
+                            <span class="skill-percentage">94%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="94"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Composition</span>
+                            <span class="skill-percentage">97%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="97"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Color Grading</span>
+                            <span class="skill-percentage">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="93"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tools-skills">
+                    <h3><i class="fas fa-tools"></i> Equipment & Software</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Canon EOS R5</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-camera-retro"></i>
+                            <span>Sony A7III</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-adobe"></i>
+                            <span>Adobe Lightroom</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fab fa-adobe"></i>
+                            <span>Adobe Photoshop</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-image"></i>
+                            <span>Capture One</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Profoto Lighting</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-video"></i>
+                            <span>DJI Drone</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-lens"></i>
+                            <span>Premium Lenses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Client Reviews</h2>
+                <p class="section-subtitle">What our clients say about our photography</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Absolutely stunning wedding photos! Captured every special moment perfectly. 
+                        Professional, friendly, and made us feel so comfortable. Our photos are beyond beautiful!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Client John & Sarah" onerror="this.src='https://via.placeholder.com/300x300/1A1A1A/C0C0C0?text=Client'">
+                        <div class="author-info">
+                            <h4>John & Sarah</h4>
+                            <p>Wedding Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Best portrait session ever! The photographer has an amazing eye for detail and lighting. 
+                        The final photos exceeded all expectations. Highly recommend!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face" alt="Client Emma Wilson" onerror="this.src='https://via.placeholder.com/300x300/1A1A1A/C0C0C0?text=Client'">
+                        <div class="author-info">
+                            <h4>Emma Wilson</h4>
+                            <p>Portrait Session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Our family photos are absolutely gorgeous! The photographer was patient with our kids 
+                        and captured their personalities perfectly. We'll treasure these forever!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Client Michael Brown" onerror="this.src='https://via.placeholder.com/300x300/1A1A1A/C0C0C0?text=Client'">
+                        <div class="author-info">
+                            <h4>Michael & Family</h4>
+                            <p>Family Session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Professional event photography at its finest! Captured all the important moments 
+                        of our corporate event beautifully. Quick turnaround and excellent quality. Thank you!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face" alt="Client Emily Davis" onerror="this.src='https://via.placeholder.com/300x300/1A1A1A/C0C0C0?text=Client'">
+                        <div class="author-info">
+                            <h4>Emily Davis</h4>
+                            <p>Corporate Event</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn" id="prev-testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots" id="testimonial-dots"></div>
+                <button class="slider-btn next-btn" id="next-testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Your journey from booking to delivery</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Initial Consultation</h3>
+                        <p>We discuss your vision, preferences, and requirements. This helps us understand your style and create a customized photography plan tailored to your needs.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Booking & Planning</h3>
+                        <p>Secure your date with a 50% deposit. We'll send you a detailed contract and planning guide to ensure everything is perfectly organized.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Pre-Session Prep</h3>
+                        <p>Receive location recommendations, outfit guidance, and a checklist. We'll confirm all details one week before your session.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Photo Session</h3>
+                        <p>On the day, we'll capture your moments with precision and artistry. Relax and enjoy - we'll handle everything professionally.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Editing & Retouching</h3>
+                        <p>Your images undergo professional editing and color grading. We ensure each photo meets our high standards of quality and artistry.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3>Delivery</h3>
+                        <p>Receive your beautifully edited photos via online gallery within 2-3 weeks. High-resolution files and print release included.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How far in advance should I book?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend booking at least 2-3 months in advance, especially for weddings and events during peak season (May-October). However, we often accommodate last-minute bookings when availability permits.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is included in the packages?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All packages include professional photography coverage, edited high-resolution images, online gallery access, and print release. Specific inclusions vary by package - please refer to the package details for exact coverage hours and deliverables.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you travel for sessions?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We travel throughout the region. Travel fees apply for locations beyond 50 miles from our studio. Destination weddings and events are welcome - contact us for custom travel packages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long until I receive my photos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Standard delivery is 2-3 weeks for portrait and event sessions, and 4-6 weeks for weddings. Rush editing is available for an additional fee. You'll receive a sneak peek within 48 hours of your session.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I request specific shots or poses?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We encourage you to share inspiration photos, shot lists, or specific moments you want captured. During our consultation, we'll discuss your vision and create a plan to ensure all your must-have shots are included.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if weather affects an outdoor session?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We monitor weather closely and will contact you 24-48 hours before outdoor sessions if conditions look unfavorable. We can reschedule at no additional cost or move to an indoor location. Your comfort and safety are our priority.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer payment plans?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer flexible payment plans for all packages. A 50% deposit secures your date, with the remaining balance due on or before the session date. We accept cash, check, credit cards, and bank transfers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I purchase additional prints or albums?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer professional printing services, custom albums, canvas prints, and wall art. All products are printed through professional labs ensuring museum-quality results. Pricing available upon request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog section" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Photography Insights</h2>
+                <p class="section-subtitle">Tips, stories, and inspiration</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=1200&h=750&fit=crop&crop=center&auto=format" alt="Wedding Photography Tips" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x750/B87333/FFFFFF?text=Wedding+Tips'">
+                        <span class="blog-category">Wedding</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>10 Essential Tips for Perfect Wedding Photos</h3>
+                        <p>
+                            Discover professional secrets for capturing timeless wedding moments. From lighting techniques to candid shots, learn how to ensure your special day is beautifully documented...
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=750&fit=crop&crop=center&auto=format" alt="Natural Light Portrait Photography" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x750/B87333/FFFFFF?text=Natural+Light+Portrait'">
+                        <span class="blog-category">Portrait</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 10, 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3>The Art of Natural Light Portrait Photography</h3>
+                        <p>
+                            Master the use of natural light to create stunning, flattering portraits. Learn about golden hour, window light, and techniques for working with different lighting conditions...
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=750&fit=crop&crop=center&auto=format" alt="Event Photography" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x750/B87333/FFFFFF?text=Event+Photography'">
+                        <span class="blog-category">Events</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 5, 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Capturing Corporate Events: A Professional Guide</h3>
+                        <p>
+                            Essential strategies for documenting corporate events, conferences, and business gatherings. From equipment choices to capturing key moments, ensure professional results...
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1200&h=750&fit=crop&crop=center&auto=format" alt="Family Photography Tips" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x750/B87333/FFFFFF?text=Family+Tips'">
+                        <span class="blog-category">Family</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 28, 2024</span>
+                            <span><i class="fas fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3>How to Prepare for Your Family Photo Session</h3>
+                        <p>
+                            Make your family photography session stress-free and fun! Learn what to wear, how to coordinate outfits, and tips for keeping kids engaged during the shoot...
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&h=750&fit=crop&crop=center&auto=format" alt="Photography Equipment" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x750/B87333/FFFFFF?text=Equipment'">
+                        <span class="blog-category">Equipment</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 20, 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3>Essential Photography Equipment for Professionals</h3>
+                        <p>
+                            A comprehensive guide to professional photography gear. From cameras and lenses to lighting equipment, discover what tools the pros use and why...
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1200&h=750&fit=crop&crop=center&auto=format" alt="Photo Editing" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x750/B87333/FFFFFF?text=Editing'">
+                        <span class="blog-category">Editing</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Post-Processing Workflow: From RAW to Final Image</h3>
+                        <p>
+                            Learn professional editing techniques and workflow strategies. Discover how to enhance your images while maintaining natural, authentic results that stand the test of time...
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards section" id="awards">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Awards & Recognition</h2>
+                <p class="section-subtitle">Excellence in photography</p>
+            </div>
+
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Wedding Photographer of the Year</h3>
+                    <p>Professional Photographers Association</p>
+                    <span class="award-year">2023</span>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Best Portrait Photography</h3>
+                    <p>International Photography Awards</p>
+                    <span class="award-year">2022</span>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Excellence in Event Coverage</h3>
+                    <p>Photography Excellence Awards</p>
+                    <span class="award-year">2023</span>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Featured Photographer</h3>
+                    <p>Photography Magazine</p>
+                    <span class="award-year">2024</span>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Top Rated Professional</h3>
+                    <p>Wedding Wire & The Knot</p>
+                    <span class="award-year">2022-2024</span>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Master Photographer</h3>
+                    <p>Professional Photographers of America</p>
+                    <span class="award-year">2021</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together on your next project</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out through any of these channels. I'm always open to discussing new projects and opportunities.</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>your.email@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 234 567 8900</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Your City, Country</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Follow Me</h4>
+                        <div class="social-links-large">
+                            <a class="linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.024-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.354V9h3.413v1.561h.047c.476-.901 1.637-1.852 3.37-1.852 3.604 0 4.27 2.372 4.27 5.455v6.287zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.451H3.558V9h3.556v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                                </svg>
+                            </a>
+                            <a class="github" href="#" aria-label="GitHub" target="_blank" rel="noreferrer">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 .297a12 12 0 0 0-3.793 23.399c.6.111.82-.258.82-.577 0-.285-.011-1.04-.017-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.492.997.108-.775.419-1.304.762-1.604-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.004 0c2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.806 5.624-5.479 5.921.43.371.814 1.102.814 2.222 0 1.604-.015 2.896-.015 3.293 0 .321.217.694.825.576A12 12 0 0 0 12 .297z"/>
+                                </svg>
+                            </a>
+                            <a class="x" href="#" aria-label="X (Twitter)" target="_blank" rel="noreferrer">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M18.244 2H21l-6.478 7.396L22.5 22h-6.89l-4.5-6.036L5 22H2.244l6.89-7.87L1.5 2h6.89l4.096 5.488L18.244 2zm-1.207 18h2.097L8.01 4H5.914l11.123 16z"/>
+                                </svg>
+                            </a>
+                            <a class="instagram" href="#" aria-label="Instagram" target="_blank" rel="noreferrer">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 16.8 2.8 2.8 0 0 0 12 9.2zm5.8-2.7a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+                                </svg>
+                            </a>
+                            <a class="dribbble" href="#" aria-label="Dribbble" target="_blank" rel="noreferrer">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.92 6h-3.58a15.73 15.73 0 0 0-1.01-2.34A8.02 8.02 0 0 1 18.92 8zM12 4c1.5 0 2.9.44 4.06 1.2a13.63 13.63 0 0 1 .99 2.27A24.9 24.9 0 0 0 12 8.5c-.9 0-1.76.08-2.58.22A20.7 20.7 0 0 1 7.5 5.1 7.96 7.96 0 0 1 12 4zM6.1 6.23A18.8 18.8 0 0 0 9 9.3a22.9 22.9 0 0 0-4.86 2.03A8.03 8.03 0 0 1 6.1 6.23zM4.05 12.6c1.74-.96 3.5-1.72 5.25-2.25.3.5.58 1.02.84 1.56-.36.1-.73.2-1.1.33-1.64.55-3.19 1.36-4.62 2.4-.2-.66-.31-1.36-.37-2.04zm2.2 4.26c1.25-.94 2.64-1.68 4.16-2.19.28-.1.57-.18.86-.26.55 1.42.97 2.95 1.24 4.5-1.12.33-2.32.36-3.52.05a7.97 7.97 0 0 1-2.74-2.1zM12 20a7.97 7.97 0 0 1-2.03-.27 26.2 26.2 0 0 0-1.2-4.42c.2-.05.4-.1.6-.14 1.76-.36 3.6-.4 5.42-.14.2.76.35 1.55.47 2.35.1.68.17 1.36.2 2.06A8 8 0 0 1 12 20zm5.2-2.04c-.05-.56-.13-1.13-.22-1.7-.1-.66-.25-1.32-.43-1.97 1.03.07 2.06.25 3.06.54a8.03 8.03 0 0 1-2.41 3.13zM16 12.5c-1.98-.24-4-.2-5.95.17-.22-.48-.46-.94-.72-1.4.93-.17 1.9-.27 2.9-.27 2.9 0 5.64.7 8.2 2.04-.1.6-.28 1.18-.52 1.73a15.9 15.9 0 0 0-3.91-.27zM7.2 4.95c.6.9 1.14 1.84 1.63 2.82-.96.2-1.86.45-2.71.75a8.03 8.03 0 0 1 1.08-3.57z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div class="form-message" id="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Google Map (Full Width) -->
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596073366!2d-74.25986757803938!3d40.69714941710603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" 
+                    width="100%"
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen=""  
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <a href="#home">Photo<span class="logo-dot">Studio</span></a>
+                    </div>
+                    <p class="brand-tagline">
+                        Professional Photography Services
+                    </p>
+                    <p>
+                        Capturing life's most precious moments with artistic vision and technical excellence. 
+                        Your trusted photographer for weddings, portraits, events, and more.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#portfolio">Gallery</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#packages">Wedding Photography</a></li>
+                        <li><a href="#packages">Portrait Sessions</a></li>
+                        <li><a href="#packages">Event Photography</a></li>
+                        <li><a href="#packages">Family Sessions</a></li>
+                        <li><a href="#packages">Commercial Shoots</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get photography tips and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> <strong class="footer-brand-name">Photo Studio</strong>. All rights reserved. Professional Photography Services</p>
+                <div class="footer-social">
+                    <a class="linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.024-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.354V9h3.413v1.561h.047c.476-.901 1.637-1.852 3.37-1.852 3.604 0 4.27 2.372 4.27 5.455v6.287zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.451H3.558V9h3.556v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                        </svg>
+                    </a>
+                    <a class="github" href="#" aria-label="GitHub" target="_blank" rel="noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M12 .297a12 12 0 0 0-3.793 23.399c.6.111.82-.258.82-.577 0-.285-.011-1.04-.017-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.492.997.108-.775.419-1.304.762-1.604-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.004 0c2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.806 5.624-5.479 5.921.43.371.814 1.102.814 2.222 0 1.604-.015 2.896-.015 3.293 0 .321.217.694.825.576A12 12 0 0 0 12 .297z"/>
+                        </svg>
+                    </a>
+                    <a class="x" href="#" aria-label="X (Twitter)" target="_blank" rel="noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M18.244 2H21l-6.478 7.396L22.5 22h-6.89l-4.5-6.036L5 22H2.244l6.89-7.87L1.5 2h6.89l4.096 5.488L18.244 2zm-1.207 18h2.097L8.01 4H5.914l11.123 16z"/>
+                        </svg>
+                    </a>
+                    <a class="instagram" href="#" aria-label="Instagram" target="_blank" rel="noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 16.8 2.8 2.8 0 0 0 12 9.2zm5.8-2.7a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

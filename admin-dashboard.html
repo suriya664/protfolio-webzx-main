@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard - Photography Booking Management">
+    <title>Admin Dashboard - PhotoStudio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    
+    <style>
+        /* Additional Admin-specific styles */
+        .analytics-chart {
+            height: 300px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+    
+    <!-- Dashboard Wrapper -->
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <div class="sidebar-logo-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="sidebar-logo-text">Photo<span>Studio</span></div>
+            </div>
+            
+            <!-- Menu -->
+            <nav class="sidebar-menu">
+                <a href="admin-dashboard.html" class="sidebar-menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span class="sidebar-menu-text">Dashboard</span>
+                </a>
+                <a href="#bookings" class="sidebar-menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="sidebar-menu-text">Bookings</span>
+                </a>
+                <a href="#users" class="sidebar-menu-item">
+                    <i class="fas fa-users"></i>
+                    <span class="sidebar-menu-text">Users</span>
+                </a>
+                <a href="#photographers" class="sidebar-menu-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span class="sidebar-menu-text">Photographers</span>
+                </a>
+                <a href="#analytics" class="sidebar-menu-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="sidebar-menu-text">Analytics</span>
+                </a>
+                <a href="#settings" class="sidebar-menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span class="sidebar-menu-text">Settings</span>
+                </a>
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color);"></div>
+                <a href="index.html" class="sidebar-menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="sidebar-menu-text">Back to Home</span>
+                </a>
+                <button class="sidebar-menu-item logout-btn" style="width: 100%; text-align: left;">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="sidebar-menu-text">Logout</span>
+                </button>
+            </nav>
+            
+            <!-- Footer -->
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="sidebar-user-avatar">AD</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Admin User</div>
+                        <div class="sidebar-user-role">Administrator</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="dashboard-title">Admin Dashboard</h1>
+                </div>
+                <div class="dashboard-header-right">
+                    <button class="header-icon-btn" data-tooltip="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="header-icon-btn theme-toggle" data-tooltip="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="header-icon-btn" data-tooltip="Profile">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Total Bookings</div>
+                        <div class="stat-card-value">247</div>
+                        <div class="stat-card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12% from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Completed</div>
+                        <div class="stat-card-value">189</div>
+                        <div class="stat-card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>8% from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Pending</div>
+                        <div class="stat-card-value">58</div>
+                        <div class="stat-card-change negative">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>5% from last month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <div class="stat-card-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-title">Total Earnings</div>
+                        <div class="stat-card-value">$124,500</div>
+                        <div class="stat-card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>15% from last month</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Management Table -->
+                <div class="data-table-wrapper">
+                    <div class="data-table-header">
+                        <h2 class="data-table-title">Recent Bookings</h2>
+                        <button class="action-btn">
+                            <i class="fas fa-filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer</th>
+                                <th>Photographer</th>
+                                <th>Package</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#BK-2024-001</td>
+                                <td>John Smith</td>
+                                <td>Sarah Johnson</td>
+                                <td>Wedding Package</td>
+                                <td>Mar 25, 2024</td>
+                                <td><span class="status-badge confirmed">Confirmed</span></td>
+                                <td>$2,500</td>
+                                <td>
+                                    <button class="action-btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#BK-2024-002</td>
+                                <td>Emma Wilson</td>
+                                <td>Michael Brown</td>
+                                <td>Portrait Session</td>
+                                <td>Mar 28, 2024</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>$350</td>
+                                <td>
+                                    <button class="action-btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#BK-2024-003</td>
+                                <td>David Lee</td>
+                                <td>Sarah Johnson</td>
+                                <td>Event Photography</td>
+                                <td>Apr 2, 2024</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>$800</td>
+                                <td>
+                                    <button class="action-btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#BK-2024-004</td>
+                                <td>Lisa Anderson</td>
+                                <td>Michael Brown</td>
+                                <td>Family Session</td>
+                                <td>Apr 5, 2024</td>
+                                <td><span class="status-badge confirmed">Confirmed</span></td>
+                                <td>$450</td>
+                                <td>
+                                    <button class="action-btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#BK-2024-005</td>
+                                <td>Robert Taylor</td>
+                                <td>Sarah Johnson</td>
+                                <td>Commercial Shoot</td>
+                                <td>Apr 10, 2024</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>$1,200</td>
+                                <td>
+                                    <button class="action-btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Two Column Layout -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <!-- User Management -->
+                    <div class="dashboard-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-users"></i>
+                            User Management
+                        </h2>
+                        <div class="data-table-wrapper" style="padding: 0; border: none; background: transparent;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Bookings</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John Smith</td>
+                                        <td>john@example.com</td>
+                                        <td>5</td>
+                                        <td><span class="status-badge confirmed">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emma Wilson</td>
+                                        <td>emma@example.com</td>
+                                        <td>3</td>
+                                        <td><span class="status-badge confirmed">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Lee</td>
+                                        <td>david@example.com</td>
+                                        <td>2</td>
+                                        <td><span class="status-badge confirmed">Active</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Photographer Management -->
+                    <div class="dashboard-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-user-tie"></i>
+                            Photographer Management
+                        </h2>
+                        <div class="data-table-wrapper" style="padding: 0; border: none; background: transparent;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Bookings</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sarah Johnson</td>
+                                        <td>sarah@example.com</td>
+                                        <td>45</td>
+                                        <td><span class="status-badge confirmed">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Brown</td>
+                                        <td>michael@example.com</td>
+                                        <td>38</td>
+                                        <td><span class="status-badge confirmed">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jessica Martinez</td>
+                                        <td>jessica@example.com</td>
+                                        <td>22</td>
+                                        <td><span class="status-badge confirmed">Active</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Section -->
+                <div class="dashboard-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-line"></i>
+                        Analytics Overview
+                    </h2>
+                    <div class="analytics-chart">
+                        <div style="text-align: center;">
+                            <i class="fas fa-chart-bar" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.3;"></i>
+                            <p>Revenue & Booking Trends Chart</p>
+                            <p style="font-size: 0.85rem; opacity: 0.7;">(Chart visualization would be integrated here)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
+
